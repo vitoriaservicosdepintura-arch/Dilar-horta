@@ -7,7 +7,7 @@ import {
   MessageCircle,
   Sparkles,
 } from "lucide-react";
-import { Facebook, Instagram } from "./BrandIcons";
+import { Instagram } from "./BrandIcons";
 import { useAdmin } from "../context/AdminContext";
 
 const cards = [
@@ -16,12 +16,6 @@ const cards = [
     title: "Site Oficial RE/MAX",
     sub: "remax.pt/dilar-horta",
     href: "https://remax.pt/pt/agente/dilar-horta/124471163",
-  },
-  {
-    Icon: Facebook,
-    title: "Facebook",
-    sub: "Dilar Horta",
-    href: "https://www.facebook.com/profile.php?id=100081296978443&locale=pt_PT#",
   },
   {
     Icon: Instagram,

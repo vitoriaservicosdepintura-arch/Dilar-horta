@@ -1,5 +1,5 @@
 import { Globe, Phone, Mail, MapPin } from "lucide-react";
-import { Facebook, Instagram } from "./BrandIcons";
+import { Instagram } from "./BrandIcons";
 
 export default function Footer() {
   return (
@@ -28,7 +28,6 @@ export default function Footer() {
           </p>
           <div className="flex gap-3 mt-6">
             {[
-              { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=100081296978443&locale=pt_PT#" },
               { Icon: Instagram, href: "https://www.instagram.com/dihorta/" },
               { Icon: Globe, href: "https://remax.pt/pt/agente/dilar-horta/124471163" },
             ].map((s, i) => (

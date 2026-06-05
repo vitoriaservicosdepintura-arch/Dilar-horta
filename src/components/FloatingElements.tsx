@@ -1,5 +1,5 @@
 import { Globe } from "lucide-react";
-import { Facebook, Instagram } from "./BrandIcons";
+import { Instagram } from "./BrandIcons";
 import { motion } from "framer-motion";
 
 export default function FloatingElements() {
@@ -13,12 +13,6 @@ export default function FloatingElements() {
         className="hidden md:flex fixed left-4 top-1/2 -translate-y-1/2 z-40 flex-col gap-3"
       >
         {[
-          {
-            Icon: Facebook,
-            href: "https://www.facebook.com/profile.php?id=100081296978443&locale=pt_PT#",
-            color: "hover:bg-[#1877F2]",
-            label: "Facebook",
-          },
           {
             Icon: Instagram,
             href: "https://www.instagram.com/dihorta/",
