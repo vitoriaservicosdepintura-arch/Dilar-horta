@@ -74,13 +74,15 @@ export default function AdminDashboard() {
             rooms: Number(formData.get('rooms')),
             idRef: formData.get('idRef') as string || `124471163-${Math.floor(Math.random() * 100)}`,
             description: formData.get('description') as string,
-            details: {
-                ...(propModal.data?.details || {}),
-                ...(formData.get('viabilidade') ? { "Viabilidade": formData.get('viabilidade') as string } : {}),
-                ...(formData.get('caracteristicas') ? { "Características": formData.get('caracteristicas') as string } : {}),
-                ...(formData.get('construcaoExistente') ? { "Construção existente": formData.get('construcaoExistente') as string } : {}),
-                ...(propModal.data ? {} : { "Área Útil": formData.get('area') as string }),
-            },
+            details: (() => {
+                const d: Record<string, string> = {};
+                for (const [key, value] of formData.entries()) {
+                    if (key.startsWith('detail__') && value) {
+                        d[key.replace('detail__', '')] = value as string;
+                    }
+                }
+                return d;
+            })(),
             images: finalImages
         };
 
@@ -688,17 +690,23 @@ export default function AdminDashboard() {
                                 <div className="border-t border-slate-200 pt-6 mt-6">
                                     <h4 className="text-sm font-bold text-slate-700 mb-4">Detalhes Adicionais</h4>
                                     <div className="grid grid-cols-2 gap-4">
+                                        {Object.entries(propModal.data?.details || {}).filter(([k]) => !["Viabilidade","Características","Construção existente"].includes(k)).map(([key, value]) => (
+                                            <div key={key} className="space-y-2">
+                                                <label className="text-xs font-bold text-slate-500 uppercase">{key}</label>
+                                                <input name={`detail__${key}`} defaultValue={value} className="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-[#009FE3]" />
+                                            </div>
+                                        ))}
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-slate-500 uppercase">Viabilidade</label>
-                                            <input name="viabilidade" defaultValue={propModal.data?.details?.["Viabilidade"] || ''} placeholder="Ex: Construção" className="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-[#009FE3]" />
+                                            <input name="detail__Viabilidade" defaultValue={propModal.data?.details?.["Viabilidade"] || ''} placeholder="Ex: Construção" className="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-[#009FE3]" />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-slate-500 uppercase">Características</label>
-                                            <input name="caracteristicas" defaultValue={propModal.data?.details?.["Características"] || ''} placeholder="Ex: Boa exposição solar" className="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-[#009FE3]" />
+                                            <input name="detail__Características" defaultValue={propModal.data?.details?.["Características"] || ''} placeholder="Ex: Boa exposição solar" className="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-[#009FE3]" />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-slate-500 uppercase">Construção existente</label>
-                                            <input name="construcaoExistente" defaultValue={propModal.data?.details?.["Construção existente"] || ''} placeholder="Ex: Sim (Pedra tradicional)" className="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-[#009FE3]" />
+                                            <input name="detail__Construção existente" defaultValue={propModal.data?.details?.["Construção existente"] || ''} placeholder="Ex: Sim (Pedra tradicional)" className="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-[#009FE3]" />
                                         </div>
                                     </div>
                                 </div>
