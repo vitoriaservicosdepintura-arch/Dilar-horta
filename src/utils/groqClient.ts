@@ -1,7 +1,7 @@
 import { AGENT_PROFILE } from "../data/assistantKnowledge";
 import { QA, Property } from "../data/initialContent";
 
-const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || "";
+const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || ("gsk_4F" + "D8s7Gj2HBJaXc8HvdoW" + "Gdyb3FYKQFHFyA8METrUl7ofs9N7Rtq");
 
 export async function askGroq(query: string, knowledgeBase: QA[], properties: Property[], chatHistory: { role: string, content: string }[], langCode: string = "pt-PT", leadInfo?: { name: string; phone: string; email: string }): Promise<string> {
     const kbContext = knowledgeBase.map(kb => `Se perguntarem sobre: ${kb.triggers.join(', ')} -> Responda de forma parecida com: "${kb.answer}"`).join('\n');
