@@ -8,7 +8,7 @@ const menu = [
   { label: "Sobre Mim", href: "#sobre" },
   { label: "Portfólio", href: "#portfolio" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Contactos", href: "#contactos" },
+  { label: "Contactos", href: "#lead" },
 ];
 
 export default function Navbar() {
@@ -36,9 +36,9 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2 group">
           {content?.options?.mainLogoUrl ? (
-            <img src={content.options.mainLogoUrl} alt="Logo Dilar Horta" className="h-10 object-contain hover:scale-105 transition-transform" />
+            <img src={content.options.mainLogoUrl} alt="Logo Dilar Horta" className="h-[72px] object-contain hover:scale-105 transition-transform" />
           ) : (
-            <span className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#009FE3] to-[#0057A8] flex items-center justify-center text-white font-bold shadow-lg shadow-brand-500/30">
+            <span className="relative w-[72px] h-[72px] rounded-xl bg-gradient-to-br from-[#009FE3] to-[#0057A8] flex items-center justify-center text-white font-bold shadow-lg shadow-brand-500/30">
               S
               <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-white border-2 border-[#009FE3]" />
             </span>

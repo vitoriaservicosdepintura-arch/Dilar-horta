@@ -64,7 +64,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#9BD8FF]" />
-              <a href="mailto:dilar.silva@remax.pt" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">dilar.silva@remax.pt</a>
+              <a href="mailto:dalirhorta@remax.pt" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">dalirhorta@remax.pt</a>
             </li>
             <li className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-[#9BD8FF]" /> Portugal
