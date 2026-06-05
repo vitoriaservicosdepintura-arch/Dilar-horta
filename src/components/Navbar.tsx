@@ -6,8 +6,8 @@ import { useAdmin } from "../context/AdminContext";
 const menu = [
   { label: "Home", href: "#home" },
   { label: "Sobre Mim", href: "#sobre" },
+  { label: "Portfólio", href: "#portfolio" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Investimentos", href: "#investimentos" },
   { label: "Contactos", href: "#contactos" },
 ];
 

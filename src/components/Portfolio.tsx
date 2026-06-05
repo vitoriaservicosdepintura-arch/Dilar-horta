@@ -49,7 +49,7 @@ export default function Portfolio() {
     };
 
     return (
-        <section id="investimentos" className="py-24 bg-slate-50 overflow-hidden">
+        <section id="portfolio" className="py-24 bg-slate-50 overflow-hidden">
             <div className="container mx-auto px-4 max-w-7xl">
 
                 {/* Header */}
@@ -59,7 +59,7 @@ export default function Portfolio() {
                         whileInView={{ opacity: 1, y: 0 }}
                         className="text-[#009FE3] font-bold tracking-widest uppercase text-sm"
                     >
-                        InvestimentosImobiliários
+                        Portfólio Imobiliário
                     </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -295,12 +295,12 @@ export default function Portfolio() {
                                             <span className="text-3xl font-display font-bold text-[#009FE3]">{selectedProp.price}</span>
                                         </div>
                                         <a
-                                            href={`https://wa.me/351964767513?text=Olá Dilar, gostaria de saber mais sobre o imóvel ID ${selectedProp.idRef}`}
+                                            href="https://remax.pt/pt/agente/dilar-horta/124471163"
                                             target="_blank"
                                             rel="noreferrer"
                                             className="w-full py-4 bg-[#009FE3] text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-blue-200 hover:bg-[#0057A8] transition-all"
                                         >
-                                            Solicitar Documentação
+                                            Saber mais
                                             <ChevronRight className="w-4 h-4" />
                                         </a>
                                     </div>

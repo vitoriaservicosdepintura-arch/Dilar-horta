@@ -26,9 +26,9 @@ export default function App() {
         <main>
           <Hero />
           <LeadCapture />
-          <Services />
           <SocialProof />
           <Portfolio />
+          <Services />
         </main>
 
         <Footer />
